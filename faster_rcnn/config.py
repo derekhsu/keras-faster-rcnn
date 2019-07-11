@@ -187,6 +187,19 @@ class MacVoConfig(VOCConfig):
     voc_path = '/Users/yizuotian/dataset/VOCdevkit/'
     pretrained_weights = '/Users/yizuotian/dataset/resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5'
 
+class MyConfig(VOCResnetConfig):
+    IMAGE_MAX_DIM = 1883
+    pretrained_weights = '/root/pretrained_model/resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5'
+    voc_path = '/root/data'
+    CLASS_MAPPING = {
+        'bg': 0
+        '204': 1,
+        '331': 2,
+        '332': 3
+    }
+    NUM_CLASSES = 1 + 3
+    USE_HORIZONTAL_FLIP = False
+    USE_RANDOM_CROP = False
 
 # 当前配置
 current_config = VOCResnetConfig()
